@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            text-align: center;
+        }
+
+        .counter-item {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px 10px;
+        }
+
+        .counter-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .counter-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .video-placeholder p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .video-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .video-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .video-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        video, iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        .countdown-display {
+            text-align: center;
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hearts {
+            text-align: center;
+            font-size: 2em;
+            margin: 20px 0;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            .counter-value { font-size: 2em; }
+            .countdown-display { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💕 Nosso Amor 💕</h1>
+        <p class="subtitle">Desde 17 de Janeiro de 2025</p>
+
+        <div class="section" style="text-align: center; font-size: 1.1em; line-height: 1.8; font-style: italic;">
+            <p style="margin-bottom: 15px;">
+                "Amor da minha vida, você é tudo para mim. Tive a maior sorte de te conhecer, e agradeço a Deus todos os dias, e peço para ele continuar abençoando nós."
+            </p>
+            <p>
+                "Você é a minha melhor parte, minha melhor escolha, meu maior amor. Obrigado por me fazer o homem mais feliz do mundo."
+            </p>
+            <div class="hearts">💖</div>
+        </div>
+
+        <div class="section">
+            <h2>⏱️ Tempo Juntos</h2>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <span class="counter-value" id="months">0</span>
+                    <span class="counter-label">Meses</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-value" id="days">0</span>
+                    <span class="counter-label">Dias</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-value" id="hours">0</span>
+                    <span class="counter-label">Horas</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-value" id="minutes">0</span>
+                    <span class="counter-label">Minutos</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-value" id="seconds">0</span>
+                    <span class="counter-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎥 Nosso Vídeo</h2>
+            <div class="video-container" id="videoContainer">
+                <iframe src="https://drive.google.com/file/d/1aD40h-EhogIIj33i3Rd1vB0PjDr7bYD3/preview" allow="autoplay" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎉 Falta para 1 Ano Juntos</h2>
+            <div class="countdown-display" id="countdown">Carregando...</div>
+            <div class="hearts">❤️ 💕 💖 💗 💝</div>
+        </div>
+    </div>
+
+    <script>
+        const startDate = new Date('2025-01-17T00:00:00');
+        const oneYearDate = new Date('2026-01-17T00:00:00');
+
+        function updateCounters() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            const seconds = Math.floor(diff / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            const months = Math.floor(days / 30.44);
+
+            document.getElementById('months').textContent = months;
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            const timeUntilYear = oneYearDate - now;
+            
+            if (timeUntilYear <= 0) {
+                document.getElementById('countdown').textContent = '🎊 1 ANO JUNTOS! 🎊';
+            } else {
+                const daysLeft = Math.floor(timeUntilYear / (1000 * 60 * 60 * 24));
+                const hoursLeft = Math.floor((timeUntilYear % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutesLeft = Math.floor((timeUntilYear % (1000 * 60 * 60)) / (1000 * 60));
+                const secondsLeft = Math.floor((timeUntilYear % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown').textContent = 
+                    `${daysLeft}d ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s`;
+            }
+        }
+
+        updateCounters();
+        setInterval(updateCounters, 1000);
+    </script>
+</body>
+</html>
